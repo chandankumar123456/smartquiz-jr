@@ -1,0 +1,93 @@
+body {
+      background: #E3F2FD;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .card {
+      background: #fff;
+      padding: 2.5rem 2rem 1.5rem 2rem;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0,40,100,0.07);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 300px;
+      max-width: 90vw;
+      width: 360px;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1976D2;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+    }
+    .input-group {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    .input-label {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: #1565C0;
+    }
+    .input-label span {
+      font-size: 1.2em;
+      margin-right: 8px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1.5px solid #BBDEFB;
+      border-radius: 18px;
+      outline: none;
+      transition: border 0.2s;
+      background: #F6FBFF;
+    }
+    input[type="text"]:focus {
+      border: 1.5px solid #1976D2;
+    }
+    .join-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: linear-gradient(90deg, #1976D2 60%, #64B5F6 100%);
+      color: #fff;
+      font-size: 1.18rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 24px;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(39,70,120,0.07);
+      transition: background 0.2s, transform 0.16s;
+    }
+    .join-btn:hover {
+      background: linear-gradient(95deg, #1565C0 60%, #1976D2 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .footer {
+      margin-top: 1.8rem;
+      font-size: 0.99rem;
+      color: #90A4AE;
+      text-align: center;
+    }
+    @media (max-width: 490px) {
+      .card {
+        width: 98vw;
+        padding: 1.5rem 0.7rem 1.3rem 0.7rem;
+      }
+      .logo {
+        font-size: 1.45rem;
+      }
+      .join-btn {
+        font-size: 1rem;
+        padding: 0.85rem;
+      }
+    }

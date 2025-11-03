@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartQuiz Jr – Your Score</title>
+  <link rel="stylesheet" href="/static/css/score.css" />
+</head>
+<body>
+  <header class="score-header">
+    <div class="logo">SmartQuiz Jr</div>
+    <p class="tagline">Well played, champ! 🎉</p>
+  </header>
+
+  <main class="result-card">
+    <h1 class="score-display" id="score-display">Your Score: 0 / 0</h1>
+
+    <p class="performance-summary" id="performance-summary">Loading your summary...</p>
+
+    <section class="detailed-breakdown" id="detailed-breakdown" aria-label="Detailed Score Breakdown">
+      <div><strong>Correct:</strong> <span id="correct-count">0</span></div>
+      <div><strong>Incorrect:</strong> <span id="incorrect-count">0</span></div>
+      <div><strong>Skipped:</strong> <span id="skipped-count">0</span></div>
+    </section>
+
+    <!-- Optional leaderboard placeholder -->
+    <section class="leaderboard" id="leaderboard" aria-label="Leaderboard" hidden>
+      <h2>Top Players</h2>
+      <ol id="leaderboard-list">
+        <!-- Leaderboard entries go here -->
+      </ol>
+    </section>
+
+    <div class="action-buttons">
+      <button id="play-again-btn">Play Again</button>
+      <button id="exit-btn">Exit</button>
+      <!-- Optional share button -->
+      <!-- <button id="share-btn">Share Result</button> -->
+    </div>
+  </main>
+
+  <footer class="score-footer">
+    © 2025 SmartQuiz Jr | Made with ❤️ by Chandan Kumar
+  </footer>
+
+  <script src="/static/js/score.js"></script>
+</body>
+</html>
