@@ -1,0 +1,2 @@
+# SmartQuiz Jr. 
+SmartQuiz Jr. is an interactive quiz application designed for children to make learning fun and engaging. It features a variety of topics, colorful graphics, and rewarding feedback to keep young learners motivated.
