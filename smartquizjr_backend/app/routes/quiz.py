@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db
 from services.quiz_logic import add_quiz, get_all_quizzes, get_quizzes_by_topic, evaluate_answers, get_leaderboard, create_session, get_session
-from schemas import QuizSessionOut, QuizSessionCreate, QuizOut, QuizSubmit, QuizResult, LeaderboardEntry
+from schemas import QuizCreate, QuizSessionOut, QuizSessionCreate, QuizOut, QuizSubmit, QuizResult, LeaderboardEntry
 from typing import List
 
 router = APIRouter(
@@ -11,9 +11,9 @@ router = APIRouter(
     tags=['quiz']
 )
 
-# @router.post("/create", response_model=QuizOut)
-# def create_quiz(quiz: QuizCreate, db: Session = Depends(get_db)):
-#     return add_quiz(db, quiz.dict())
+@router.post("/add", response_model=QuizOut)
+def create_quiz(quiz: QuizCreate, db: Session = Depends(get_db)):
+    return add_quiz(db, quiz.dict())
 
 @router.post("/create", response_model=QuizSessionOut)
 def create_new_session(session_in: QuizSessionCreate, db: Session = Depends(get_db)):

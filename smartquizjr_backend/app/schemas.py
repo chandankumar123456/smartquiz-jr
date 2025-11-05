@@ -46,6 +46,7 @@ class QuizOut(BaseModel):
     options: Dict[str, str]
     topic: str
     difficulty: str
+    correct_answer: str
     
     @validator('options')
     def check_min_options(cls, v):
