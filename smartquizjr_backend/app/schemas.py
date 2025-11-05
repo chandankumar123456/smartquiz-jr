@@ -28,7 +28,7 @@ class LeaderboardEntry(BaseModel):
     session_id: Optional[str]
     score: int
     time_taken_seconds: Optional[float]
-    submitted_at: str 
+    submitted_at: Optional[datetime] 
     
     class Config:
         orm_mode = True
@@ -61,7 +61,7 @@ class QuizOut(BaseModel):
         return v
     
     class Config:
-        orm_mode: True
+        orm_mode = True
 
 class QuizSubmit(BaseModel):
     answers: Dict[int, str] # Quiz question IDs mapped to submitted answers

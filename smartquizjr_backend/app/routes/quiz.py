@@ -19,7 +19,7 @@ router = APIRouter(
 def create_new_session(session_in: QuizSessionCreate, db: Session = Depends(get_db)):
     return create_session(db, session_in.questions, session_in.config, session_in.template_id)
 
-@router.get("/{session_id}", response_model=QuizSessionOut)
+@router.get("/session/{session_id}", response_model=QuizSessionOut)
 def read_session(session_id: int, db: Session = Depends(get_db)):
     session = get_session(db, session_id)
     if not session:
@@ -30,7 +30,7 @@ def read_session(session_id: int, db: Session = Depends(get_db)):
 def read_all_quizzes(db: Session = Depends(get_db)):
     return get_all_quizzes(db)
 
-@router.get("/{topic}", response_model=list[QuizOut])
+@router.get("/topic/{topic}", response_model=list[QuizOut])
 def read_quizzes_by_topic(topic: str, difficulty: str = None, db: Session = Depends(get_db)):
     return get_quizzes_by_topic(db, topic, difficulty)
 

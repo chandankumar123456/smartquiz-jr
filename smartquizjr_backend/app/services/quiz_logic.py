@@ -29,7 +29,8 @@ def get_quizzes_by_topic(db: Session, topic: str, difficulty: str = None):
 
 def evaluate_answers(db: Session, answers_dict: dict, user_id: int = None, session_id: str = None, time_taken_seconds: float = None) -> dict:
     
-    question_ids = {q.id for q in db.query(QuizQuestion.id).all()}
+    from sqlalchemy import select
+    question_ids = set(db.scalars(select(QuizQuestion.id)).all())
     invalid_ids = [str(id) for id in answers_dict.keys() if int(id) not in question_ids]
     if invalid_ids:
         raise ValueError(f"Invalid question IDs in answers: {', '.join(invalid_ids)}")
